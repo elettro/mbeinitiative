@@ -23,8 +23,35 @@ body{
 }
 
 /* NAV */
+
+.top-strip{
+  position:sticky;top:0;z-index:110;
+  background:var(--navy-light);
+  border-bottom:1px solid rgba(184,144,46,0.35);
+}
+.top-strip-inner{
+  max-width:1140px;margin:0 auto;
+  padding:8px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.top-strip-tagline{
+  color:rgba(248,245,239,0.88);
+  font-size:0.76rem;letter-spacing:0.04em;
+}
+.top-strip-contact{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.top-strip-contact a{
+  color:rgba(248,245,239,0.82);
+  text-decoration:none;font-size:0.75rem;letter-spacing:0.04em;
+}
+.top-strip-contact a:hover{color:var(--gold-light)}
+.top-strip-cta{
+  padding:6px 12px;border:1px solid rgba(184,144,46,0.55);
+  text-transform:uppercase;letter-spacing:0.08em;font-weight:500;
+}
+.top-strip-cta:hover{background:rgba(184,144,46,0.18);}
+
 .nav{
-  position:sticky;top:0;z-index:100;
+  position:sticky;top:42px;z-index:100;
   background:rgba(15,30,53,0.97);
   backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(184,144,46,0.3);
@@ -605,6 +632,23 @@ footer{
 .footer-sponsor a{display:inline-flex;align-items:center}
 .footer-sponsor img{height:26px;width:auto;display:block}
 
+.footer-contact{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.footer-contact a{
+  font-size:0.78rem;color:rgba(248,245,239,0.68);
+  text-decoration:none;letter-spacing:0.04em;
+}
+.footer-contact a:hover{color:var(--gold-light)}
+.footer-signup{
+  border:1px solid rgba(184,144,46,0.5);
+  padding:6px 12px;text-transform:uppercase;letter-spacing:0.08em;
+}
+.footer-tagline{
+  width:100%;
+  font-size:0.8rem;
+  color:rgba(248,245,239,0.75);
+  letter-spacing:0.03em;
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-left>*{animation:fadeUp 0.6s ease both}
@@ -616,6 +660,8 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:940px){
+  .top-strip-inner{padding:8px 20px;flex-direction:column;align-items:flex-start}
+  .nav{top:74px}
   .hero-inner{grid-template-columns:1fr;gap:40px}
   .contact-card{transform:translateY(0);margin-bottom:32px;max-width:420px}
   .mbe-grid{grid-template-columns:1fr}
@@ -628,6 +674,8 @@ footer{
   .nav-links{display:none}
 }
 @media(max-width:640px){
+  .top-strip-tagline{font-size:0.7rem}
+  .top-strip-contact{gap:10px}
   .section{padding:64px 20px}
   .hero{min-height:auto;padding:36px 16px 46px}
   .subject-grid{grid-template-columns:1fr}
