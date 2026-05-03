@@ -284,6 +284,20 @@
   </div>
 </section>
 
+<section id="initiative-visuals" class="section">
+  <div class="section-inner visuals-inner">
+    <div class="section-tag">Visuals</div>
+    <h2 class="section-heading">MBE Initiative Snapshot</h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Browse key visual materials below. The display rotates slowly between both visuals, and you can switch instantly any time.</p>
+    <div class="visual-rotator" aria-live="polite">
+      <img class="rotator-image is-active" src="images/mbeinitiative-visual-1.png" alt="MBE Initiative visual one" data-visual-index="0">
+      <img class="rotator-image" src="images/mbeinitiative-visual-2.png" alt="MBE Initiative visual two" data-visual-index="1">
+    </div>
+    <button type="button" class="btn-primary visual-toggle-btn" id="visual-toggle-btn">Show Other Visual</button>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">MBE <span>Initiative</span></div>
@@ -296,6 +310,30 @@
     <div class="footer-copy">&copy; 2001 - 2026 Performance Test Bar Review Workshop &middot; California</div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const images = Array.from(document.querySelectorAll('.rotator-image'));
+    const toggleBtn = document.getElementById('visual-toggle-btn');
+    let currentIndex = 0;
+
+    if (!images.length || !toggleBtn) return;
+
+    const showImage = (nextIndex) => {
+      images[currentIndex].classList.remove('is-active');
+      currentIndex = nextIndex;
+      images[currentIndex].classList.add('is-active');
+    };
+
+    const showNextImage = () => {
+      const nextIndex = (currentIndex + 1) % images.length;
+      showImage(nextIndex);
+    };
+
+    toggleBtn.addEventListener('click', showNextImage);
+    setInterval(showNextImage, 7000);
+  })();
+</script>
 
 <script src="js/global-nav.js"></script>
 </body>
