@@ -11,7 +11,7 @@
     <div class="nav-links">\
       <a href="' + base + '/#mbe">MBE Strategy</a>\
       <a href="' + base + '/mbe-regimen-sequence">MBE Regimen Sequence</a>\
-      <a href="' + base + '/#daily-planner">Daily Planner</a>\
+      <a href="' + base + '/daily-study-breakdown/index.html">Daily Planner</a>\
       <a href="' + base + '/#performance-test">Performance Test</a>\
       <a href="' + base + '/mbememo">MBE Memo</a>\
     </div>\
