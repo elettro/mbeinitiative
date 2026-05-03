@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Dear Colleagues in Law — John B. Holtz, Esq. | MBE Initiative</title>
+<meta name="description" content="An open letter from John B. Holtz, Esq. on collaborative MBE preparation, the California Bar pass rate, and how every applicant can contribute to a better outcome for all."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* PAGE-SPECIFIC STYLES */
+
+.memo-hero{
+  background:var(--navy);
+  padding:72px 32px 64px;
+  position:relative;
+  overflow:hidden;
+}
+.memo-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 20% 50%, rgba(184,144,46,0.05) 0%, transparent 65%);
+  pointer-events:none;
+}
+.memo-hero-inner{
+  max-width:800px;margin:0 auto;
+  position:relative;
+}
+.memo-breadcrumb{
+  display:flex;align-items:center;gap:10px;
+  font-size:0.75rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(248,245,239,0.45);
+  margin-bottom:32px;
+  text-decoration:none;
+}
+.memo-breadcrumb a{
+  color:rgba(248,245,239,0.45);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.memo-breadcrumb a:hover{color:var(--gold-light)}
+.memo-breadcrumb span{color:var(--gold)}
+.memo-kicker{
+  font-size:0.72rem;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.memo-kicker::before{
+  content:'';display:block;width:24px;height:1px;background:var(--gold);
+}
+.memo-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3.5vw,2.8rem);
+  font-weight:700;line-height:1.18;
+  color:var(--cream);
+  margin-bottom:20px;
+}
+.memo-hero h1 em{
+  font-style:italic;color:var(--gold-light);
+}
+.memo-meta-row{
+  display:flex;align-items:center;gap:24px;
+  flex-wrap:wrap;
+  padding-top:24px;
+  border-top:1px solid rgba(184,144,46,0.2);
+}
+.memo-meta-item{
+  font-size:0.8rem;
+  color:rgba(248,245,239,0.5);
+  letter-spacing:0.04em;
+}
+.memo-meta-item strong{
+  color:rgba(248,245,239,0.85);
+  font-weight:500;
+}
+.memo-meta-dot{
+  width:3px;height:3px;border-radius:50%;
+  background:rgba(184,144,46,0.4);
+}
+
+/* LETTER BODY */
+.letter-wrap{
+  max-width:800px;margin:0 auto;
+  padding:0 32px 96px;
+}
+
+/* LETTER PAPER */
+.letter-paper{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-top:4px solid var(--gold);
+  margin-top:-2px;
+  padding:64px 72px;
+  position:relative;
+  box-shadow:0 4px 40px rgba(15,30,53,0.07),0 1px 4px rgba(15,30,53,0.04);
+}
+.letter-paper::before{
+  content:'';
+  position:absolute;
+  top:0;left:72px;right:72px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,144,46,0.15),transparent);
+}
+
+/* LETTERHEAD */
+.letterhead{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding-bottom:32px;
+  margin-bottom:32px;
+  border-bottom:1px solid var(--card-border);
+}
+.lh-brand{
+  font-family:'Playfair Display',serif;
+}
+.lh-name{
+  font-size:1.3rem;font-weight:700;
+  color:var(--navy);letter-spacing:0.01em;
+}
+.lh-name span{color:var(--gold)}
+.lh-title{
+  font-size:0.78rem;color:var(--text-muted);
+  letter-spacing:0.06em;text-transform:uppercase;
+  margin-top:3px;
+}
+.lh-contact{
+  text-align:right;
+  font-size:0.78rem;
+  color:var(--text-muted);
+  line-height:1.8;
+}
+.lh-contact a{
+  color:var(--gold);text-decoration:none;
+}
+.lh-contact a:hover{color:var(--navy)}
+
+/* DATELINE */
+.letter-date{
+  font-family:'Libre Baskerville',serif;
+  font-size:0.88rem;
+  color:var(--text-muted);
+  margin-bottom:28px;
+  font-style:italic;
+}
+
+/* SALUTATION */
+.letter-salutation{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;font-weight:700;
+  color:var(--navy);
+  margin-bottom:28px;
+}
+
+/* BODY TEXT */
+.letter-body{
+  font-family:'Libre Baskerville',serif;
+  font-size:1rem;
+  line-height:2;
+  color:#2e2e3a;
+}
+.letter-body p{
+  margin-bottom:1.6em;
+}
+.letter-body p:last-of-type{
+  margin-bottom:0;
+}
+
+/* PULL QUOTE */
+.pull-quote{
+  margin:40px 0;
+  padding:28px 32px;
+  border-left:3px solid var(--gold);
+  background:var(--cream);
+  position:relative;
+}
+.pull-quote p{
+  font-family:'Playfair Display',serif;
+  font-size:1.12rem;font-style:italic;
+  line-height:1.7;
+  color:var(--navy);
+  margin:0 !important;
+}
+.pull-quote cite{
+  display:block;margin-top:12px;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.75rem;font-style:normal;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* KEY STAT CALLOUT */
+.stat-callout{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--card-border);
+  border:1px solid var(--card-border);
+  margin:40px 0;
+}
+.stat-callout-item{
+  background:#fff;
+  padding:24px 20px;
+  text-align:center;
+}
+.sc-num{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;
+  color:var(--navy);display:block;
+  line-height:1;margin-bottom:6px;
+}
+.sc-num em{color:var(--gold);font-style:normal;}
+.sc-label{
+  font-size:0.75rem;color:var(--text-muted);
+  letter-spacing:0.06em;text-transform:uppercase;
+  line-height:1.4;
+}
+
+/* SECTION DIVIDER */
+.letter-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:40px 0;
+}
+.letter-divider::before,.letter-divider::after{
+  content:'';flex:1;height:1px;background:var(--card-border);
+}
+.letter-divider span{
+  font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--text-light);white-space:nowrap;
+}
+
+/* CLOSING */
+.letter-closing{
+  margin-top:48px;
+  padding-top:40px;
+  border-top:1px solid var(--card-border);
+}
+.closing-phrase{
+  font-family:'Libre Baskerville',serif;
+  font-size:1rem;font-style:italic;
+  color:#2e2e3a;
+  margin-bottom:32px;
+  line-height:1.8;
+}
+.sig-block{
+  display:flex;align-items:flex-end;gap:32px;
+}
+.sig-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--navy);
+}
+.sig-title{
+  font-size:0.78rem;color:var(--text-muted);
+  letter-spacing:0.04em;margin-top:4px;
+}
+.sig-sites{
+  font-size:0.78rem;color:var(--gold);margin-top:6px;
+}
+.sig-sites a{color:var(--gold);text-decoration:none;}
+.sig-sites a:hover{color:var(--navy)}
+
+/* POSTSCRIPTS */
+.ps-section{
+  margin-top:48px;
+  padding-top:32px;
+  border-top:1px solid var(--card-border);
+}
+.ps-label{
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:20px;display:block;
+}
+.ps-item{
+  display:grid;grid-template-columns:32px 1fr;
+  gap:0 12px;
+  margin-bottom:20px;
+}
+.ps-num{
+  font-family:'Playfair Display',serif;
+  font-size:0.9rem;font-weight:700;
+  color:var(--gold);padding-top:2px;
+}
+.ps-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:0.88rem;line-height:1.85;
+  color:var(--text-muted);
+}
+.ps-text a{color:var(--gold);text-decoration:none;}
+.ps-text a:hover{color:var(--navy)}
+
+/* SIDEBAR / TABLE OF CONTENTS */
+.memo-layout{
+  display:grid;
+  grid-template-columns:1fr 220px;
+  gap:0;
+  max-width:1060px;
+  margin:0 auto;
+  padding:0 32px 96px;
+  align-items:start;
+}
+.memo-toc{
+  position:sticky;top:88px;
+  padding:28px 0 28px 32px;
+}
+.toc-label{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:16px;display:block;
+}
+.toc-list{
+  list-style:none;
+  display:flex;flex-direction:column;
+  gap:8px;
+}
+.toc-list a{
+  font-size:0.8rem;color:var(--text-muted);
+  text-decoration:none;line-height:1.4;
+  transition:color 0.2s;
+  display:block;
+  padding-left:10px;
+  border-left:2px solid transparent;
+  transition:all 0.2s;
+}
+.toc-list a:hover{
+  color:var(--navy);
+  border-left-color:var(--gold);
+}
+.toc-divider{
+  height:1px;background:var(--card-border);
+  margin:12px 0;
+}
+.toc-cta{
+  margin-top:24px;
+  padding:16px;
+  background:var(--navy);
+  border-left:2px solid var(--gold);
+}
+.toc-cta p{
+  font-size:0.78rem;line-height:1.6;
+  color:rgba(248,245,239,0.65);
+  margin-bottom:12px;
+}
+.toc-cta a{
+  font-size:0.75rem;font-weight:500;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--gold-light);text-decoration:none;
+}
+.toc-cta a:hover{color:var(--cream)}
+
+/* PAPER ONLY — no sidebar on narrow */
+@media(max-width:860px){
+  .memo-layout{
+    grid-template-columns:1fr;
+    padding:0 20px 64px;
+  }
+  .memo-toc{display:none}
+  .letter-paper{padding:40px 32px}
+  .letterhead{flex-direction:column;gap:12px}
+  .lh-contact{text-align:left}
+  .stat-callout{grid-template-columns:1fr}
+  .sig-block{flex-direction:column;gap:0}
+}
+@media(max-width:540px){
+  .letter-paper{padding:28px 20px}
+  .memo-hero{padding:48px 20px 40px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">MBE <span>Initiative</span></a>
+    <div class="nav-links">
+      <a href="index.html#mbe">MBE Strategy</a>
+      <a href="index.html#study-sequence">Study Sequence</a>
+      <a href="index.html#daily-planner">Daily Planner</a>
+      <a href="index.html#performance-test">Performance Test</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="memo-hero">
+  <div class="memo-hero-inner">
+    <div class="memo-breadcrumb">
+      <a href="index.html">MBE Initiative</a>
+      <span>›</span>
+      <span style="color:rgba(248,245,239,0.65)">Open Letter</span>
+    </div>
+    <div class="memo-kicker">Dear Colleagues in Law</div>
+    <h1>The Best-Kept Secret in<br><em>California Bar Prep</em></h1>
+    <div class="memo-meta-row">
+      <div class="memo-meta-item"><strong>Author:</strong> John B. Holtz, Esq.</div>
+      <div class="memo-meta-dot"></div>
+      <div class="memo-meta-item"><strong>Published at:</strong> MBEInitiative.com</div>
+      <div class="memo-meta-dot"></div>
+      <div class="memo-meta-item"><strong>Audience:</strong> California Bar Applicants &amp; Legal Academia</div>
+    </div>
+  </div>
+</div>
+
+<!-- TWO-COLUMN LAYOUT: LETTER + TOC SIDEBAR -->
+<div class="memo-layout">
+
+  <!-- LETTER PAPER -->
+  <div>
+    <div class="letter-paper" id="letter-top">
+
+      <!-- LETTERHEAD -->
+      <div class="letterhead">
+        <div class="lh-brand">
+          <div class="lh-name">John B. Holtz<span>,</span> Esq.</div>
+          <div class="lh-title">Bar Exam Preparation Specialist</div>
+        </div>
+        <div class="lh-contact">
+          <a href="https://MBEInitiative.com">MBEInitiative.com</a><br>
+          <a href="https://PerformanceTest.Net">PerformanceTest.Net</a><br>
+          <a href="tel:3103389582">310-338-9582</a><br>
+          California
+        </div>
+      </div>
+
+      <div class="letter-date">Summer Bar Season</div>
+
+      <div class="letter-salutation">Dear Colleagues in Law:</div>
+
+      <div class="letter-body">
+
+        <p id="intro">I am taking the unusual step of writing to all of you — this summer's bartakers as well as those in academe who support them — in a single communication that will, I hope, be continuously forwarded to the point where the message contained here is received by all bartakers. If, along its way, the letter attracts some sponsors to accelerate its dissemination or amplify its message, so much the better.</p>
+
+        <div class="pull-quote">
+          <p>The best-kept secret in California bar prep is how to increase the pass rate. The answer, for the past thirty years, is that you increase our applicant pool's proficiency on the MBE.</p>
+          <cite>— John B. Holtz, Esq.</cite>
+        </div>
+
+        <p>If we ALL subscribe to this objective, the resultant increase in the pass rate from such a global effort could well amount to 10–20 points or more — meaning a jump from 43% to 62%, which would merely restore the pass rate to the levels seen in 2008 and, before that, in 1997. This increase would translate into California awarding over fifteen hundred additional licenses this November, even assuming a slight drop in the number of general applicants. Allow me to explain.</p>
+
+        <div class="stat-callout" id="stats">
+          <div class="stat-callout-item">
+            <span class="sc-num"><em>43%</em></span>
+            <span class="sc-label">Current California<br>Pass Rate</span>
+          </div>
+          <div class="stat-callout-item">
+            <span class="sc-num"><em>+20</em><span style="font-size:1.2rem">pts</span></span>
+            <span class="sc-label">Potential Gain from<br>Collective MBE Focus</span>
+          </div>
+          <div class="stat-callout-item">
+            <span class="sc-num"><em>1,500+</em></span>
+            <span class="sc-label">Additional Licenses<br>This November</span>
+          </div>
+        </div>
+
+        <div class="letter-divider" id="how-it-works"><span>How the Scaling Works</span></div>
+
+        <p>Since 1987, the California Committee of Bar Examiners has hitched its pass-rate wagon to the MBE performance of its applicant pool. Once the National Conference of Bar Examiners has equated the degree of difficulty of the present MBE to past administrations and determined an appropriate scaling for all present applicants nationwide, our Committee uses its slice of this data to see how well its present general bar applicant pool performed on this MBE in relation to past pools.</p>
+
+        <p>If the present California applicant pool performs better on this MBE than preceding pools did in the past, the California Examiners presume this same applicant pool should also perform equally well on the written section. The grading is not changed — since grading merely rank-orders the individual performances of the pool members on the written section. Then the spread of subjective written section scores are matched, that is, scaled, to the scores achieved on the objective MBE section.</p>
+
+        <p>In essence, the better our applicant pool — as a whole — scores on the MBE, the higher its collective scoring will be for the written section, and the greater the number of bar passers. On the flip side, which I have had to state and restate to successive waves of conspiracy-minded applicants: the written section does not and cannot dictate the pass rate.</p>
+
+        <div class="pull-quote">
+          <p>It is the MBE which determines <em>how many</em> will pass the bar; the written section then determines <em>who</em> will pass.</p>
+          <cite>— The bottom line</cite>
+        </div>
+
+        <div class="letter-divider" id="collaboration"><span>The Collaborative Imperative</span></div>
+
+        <p>In light of this formulation you might ask why MBE practice is not regularly, if not enthusiastically, emphasized by every party involved in bar preparation. I can only deduce that such is not the case due to a shared blind spot — the product of a flawed group-think dynamic. Bar review shares the same foibles that most students and many schools have adopted: that passing the bar exam is first and foremost a zero-sum game wherein my opportunity to pass comes only at the expense of taking or keeping that opportunity from another.</p>
+
+        <p>But that is decidedly not the case; nor should we approach the entire exam with that solo attitude. Indeed, it is this very attitude that costs us well over a thousand bar licenses each year. The written section is competitive and purposely exclusive. But the MBE is — or should be seen as — <strong>collaborative and helpfully inclusive.</strong> It is in every reader's best interest for every bar applicant to do as well as possible on the MBE. There is no competitive angle to work when your answer sheets are scored by a mechanical scanner.</p>
+
+        <p>In this respect the bar examination is like <em>The Hunger Games</em>. Before the mortal combatants kill their last remaining rival, they form alliances to increase their individual odds of eventual success. Likewise, on the bar exam, the entire applicant population must share their MBE advice and encourage one another to produce their best collective MBE performance. Thereafter, the written section will determine who qualifies among a larger lot of winners. That is WIN-WIN, my friends.</p>
+
+        <div class="letter-divider" id="obstacles"><span>Three Obstacles to Overcome</span></div>
+
+        <p>Assuming you are ready to progress, the next step is to identify the obstacles to achieving our goal of maximizing the pass rate via the MBE. There are three: first, most bar applicants take one nationwide review program; second, many applicants — mainly repeaters, but many first-timers as well — can no longer afford to take a general review program; third, all the programs are enabling and promoting the online reception of service.</p>
+
+        <p><strong>First: the major commercial programs.</strong> Unfortunately, the dominant nationwide program, as recently deployed, is not greater than the sum of its parts. It is lesser due to a mishmash of schedules and an amalgam of course features that operate at cross purposes. Each successive class of bartakers succumbs to a complacency in their MBE study when they buy into the hype that meaningful, computerized MBE performance comparisons are readily available to measure personal levels of preparedness. This feature is bogus in so many ways. The MBE is not a competitive test; the scanner doesn't care how you perform in relation to anyone else. Success on the MBE is you outperforming your LSAT predictor. The only comparison worth your time is whether you are now getting right the questions you got wrong two weeks ago.</p>
+
+        <p><strong>Second: students who can no longer afford a bar review program.</strong> The first priority is to develop a schedule. I have posted a Study Sequence at <a href="https://MBEInitiative.com">MBEInitiative.com</a>. It will address substantive review: order and duration. Late starters can still adopt it by proportionately reducing the first few weeks of review progress. You must also secure additional MBE materials — Emanuel's Strategy &amp; Tactics comes to mind; the NCBE has four different 100-question compilations with annotated answers for sale. Repeaters: the key to improving your MBE score is to supplement with different materials to keep you sharp and avoid dulling your skills with repetitive look-alike questions.</p>
+
+        <p><strong>Third: the shift to online review.</strong> This is fraught with danger for students who cannot maintain disciplined adherence to a schedule. Slacking off online is an invitation to fall behind and stay behind. July — which is typically when you can shift gears to memorize and practice — then becomes a harried round of catch-up. And the biggest canard in bar review is that you will have the last two weeks free to memorize. The last two weeks should see you shifting to practice, practice, practice. Start your memorization now, with a dozen-plus rule sets each day.</p>
+
+        <div class="letter-divider" id="action"><span>The Action Plan</span></div>
+
+        <p>Big bar review is aimed at a target audience that resides in the top quartile at a school with a high LSAT-cum-GPA admissions range — students who are hard-wired to study long hours on top of being good objective test-takers. Beyond this demographic, the pacing is daunting and the opportunities to practice writing essays and PTs, let alone follow a daily MBE regimen, dwindle.</p>
+
+        <p>I am not saying that any national program is a bad course; I am saying that they could be better. In the meantime, make the program work for you. Here is a K.I.S.S. bit of advice: <strong>do 45 MBEs a day in 3 sets of 15</strong> — as first prep exercise of the day; first exercise after lunch; and the last exercise of the day. From my ongoing survey of repeaters, this practice easily eclipses the numbers they typically were assigned, or in fact accomplished, during prior bar-prep seasons.</p>
+
+        <p>To ensure that the goal of this missive is realized I need all your help in spreading its message of encouraging all bartakers to diligently pursue more collaborative, more effective, and mutually supportive MBE practice. I believe that a quick review of the available literature will confirm that this message is neither naïve nor unfounded.</p>
+
+        <p>Academics: share this message, its attachments, and your own encouragement with your graduates. Ensure that your repeaters are included in any outreach — they need added support to finally close this chapter in their careers.</p>
+
+        <p>Bartakers: read the attachments and incorporate as many of the suggestions as you find apt, and utilize as many of the tools as you find necessary. Find your own routine for successful MBE practice and put it on autopilot. When you sit in your bar class tomorrow, alert your mates to this initiative and enlist their efforts.</p>
+
+        <p>Remember: this letter will probably have to land in 10,000 inboxes — and, for some, more than once. Never lose sight of our shared, ultimate goal: fifteen hundred more California Attorney Licenses awarded this November. May one be yours, and may dozens be claimed by your classmates. Every license is a win for our profession.</p>
+
+      </div><!-- /.letter-body -->
+
+      <!-- CLOSING -->
+      <div class="letter-closing">
+        <div class="closing-phrase">
+          In anticipation that we will be collaborating this summer, and in doing so ensuring the happiness of our greatest number this fall, I have the privilege to be your colleague,
+        </div>
+        <div class="sig-block">
+          <div>
+            <div class="sig-name">John B. Holtz, Esq.</div>
+            <div class="sig-title">Bar Exam Preparation Specialist · California</div>
+            <div class="sig-sites">
+              <a href="https://PerformanceTest.Net">PerformanceTest.Net</a>
+              &nbsp;·&nbsp;
+              <a href="https://MBEInitiative.com">MBEInitiative.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSTSCRIPTS -->
+      <div class="ps-section" id="postscripts">
+        <span class="ps-label">Post Scripts</span>
+        <div class="ps-item">
+          <div class="ps-num">1.</div>
+          <div class="ps-text">Since all jurisdictions that use the MBE also scale their written component scores to the MBE — with the exception of Kentucky, Oklahoma, South Carolina and Wyoming (source: Susan Case, then Director of Testing at NCBE) — this message has similar value to bartakers and their supporters in all but four MBE states. Please feel free to forward this letter to your colleagues nationwide.</div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-num">2.</div>
+          <div class="ps-text">In the event that the MBE practice attachments become detached, or you wish to draft your own personalized message, I have created <a href="https://MBEInitiative.com">MBEInitiative.com</a> to serve as a repository for these rudimentary guides and worksheets, which are free to all individual bartakers and their academic backers.</div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-num">3.</div>
+          <div class="ps-text">I offer a mea culpa to those who find this missive strident or unnecessarily critical. My intent throughout was to strike a stark contrast — perhaps inartfully — between business-as-usual and what might be achievable in an enlightened world of bar preparation.</div>
+        </div>
+      </div>
+
+    </div><!-- /.letter-paper -->
+  </div><!-- /letter column -->
+
+  <!-- SIDEBAR TOC -->
+  <div class="memo-toc">
+    <span class="toc-label">In This Letter</span>
+    <ul class="toc-list">
+      <li><a href="#intro">The Core Argument</a></li>
+      <li><a href="#stats">Pass Rate &amp; Impact</a></li>
+      <li><a href="#how-it-works">How Scaling Works</a></li>
+      <li><a href="#collaboration">The Collaborative Case</a></li>
+      <li><a href="#obstacles">Three Obstacles</a></li>
+      <li><a href="#action">The Action Plan</a></li>
+      <li><a href="#postscripts">Post Scripts</a></li>
+    </ul>
+    <div class="toc-divider"></div>
+    <div class="toc-cta">
+      <p>Ready to build your MBE study plan?</p>
+      <a href="index.html#study-sequence">View the Study Sequence →</a>
+    </div>
+    <div class="toc-divider"></div>
+    <div style="margin-top:16px">
+      <a href="tel:3103389582" style="display:block;font-size:0.75rem;color:var(--text-muted);text-decoration:none;margin-bottom:6px;">📞 310-338-9582</a>
+      <a href="mailto:performancetestworkshop@gmail.com" style="display:block;font-size:0.75rem;color:var(--gold);text-decoration:none;word-break:break-word;">performancetestworkshop<br>@gmail.com</a>
+    </div>
+  </div>
+
+</div><!-- /.memo-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">MBE <span>Initiative</span></div>
+    <div class="footer-links">
+      <a href="index.html#mbe">MBE</a>
+      <a href="index.html#study-sequence">Sequence</a>
+      <a href="index.html#daily-planner">Planner</a>
+      <a href="index.html#performance-test">PT Workshop</a>
+    </div>
+    <div class="footer-copy">&copy; 2025 Performance Test Bar Review Workshop &middot; California</div>
+  </div>
+</footer>
+
+</body>
+</html>
