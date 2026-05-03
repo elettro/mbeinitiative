@@ -298,12 +298,20 @@
     <div class="section-tag">Visuals</div>
     <h2 class="section-heading">MBE Initiative Snapshot</h2>
     <div class="section-rule"></div>
-    <p class="section-lead">Browse key visual materials below. The display rotates slowly between both visuals, and you can switch instantly any time.</p>
-    <div class="visual-rotator" aria-live="polite">
-      <img class="rotator-image is-active" src="images/mbeinitiative-visual-1.png" alt="MBE Initiative visual one" data-visual-index="0">
-      <img class="rotator-image" src="images/mbeinitiative-visual-2.png" alt="MBE Initiative visual two" data-visual-index="1">
+    <p class="section-lead">Browse key visual materials below. The display rotates between all three visuals, and you can switch instantly any time.</p>
+    <div class="visual-rotator-wrap">
+      <button type="button" class="visual-arrow visual-arrow-left" id="visual-prev-btn" aria-label="Show previous visual">
+        <span aria-hidden="true">&#10094;</span>
+      </button>
+      <div class="visual-rotator" aria-live="polite">
+        <img class="rotator-image is-active" src="images/mbeinitiative-visual-1.png" alt="MBE Initiative visual one" data-visual-index="0">
+        <img class="rotator-image" src="images/mbeinitiative-visual-2.png" alt="MBE Initiative visual two" data-visual-index="1">
+        <img class="rotator-image" src="images/mbeinitiative-visual-3.png" alt="MBE Initiative visual three" data-visual-index="2">
+      </div>
+      <button type="button" class="visual-arrow visual-arrow-right" id="visual-next-btn" aria-label="Show next visual">
+        <span aria-hidden="true">&#10095;</span>
+      </button>
     </div>
-    <button type="button" class="btn-primary visual-toggle-btn" id="visual-toggle-btn">Show Other Visual</button>
   </div>
 </section>
 
@@ -323,23 +331,23 @@
 <script>
   (function () {
     const images = Array.from(document.querySelectorAll('.rotator-image'));
-    const toggleBtn = document.getElementById('visual-toggle-btn');
+    const prevBtn = document.getElementById('visual-prev-btn');
+    const nextBtn = document.getElementById('visual-next-btn');
     let currentIndex = 0;
 
-    if (!images.length || !toggleBtn) return;
+    if (!images.length || !prevBtn || !nextBtn) return;
 
     const showImage = (nextIndex) => {
       images[currentIndex].classList.remove('is-active');
-      currentIndex = nextIndex;
+      currentIndex = (nextIndex + images.length) % images.length;
       images[currentIndex].classList.add('is-active');
     };
 
-    const showNextImage = () => {
-      const nextIndex = (currentIndex + 1) % images.length;
-      showImage(nextIndex);
-    };
+    const showNextImage = () => showImage(currentIndex + 1);
+    const showPrevImage = () => showImage(currentIndex - 1);
 
-    toggleBtn.addEventListener('click', showNextImage);
+    prevBtn.addEventListener('click', showPrevImage);
+    nextBtn.addEventListener('click', showNextImage);
     setInterval(showNextImage, 7000);
   })();
 </script>
