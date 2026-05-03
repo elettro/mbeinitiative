@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>15 MBE Practice Tips | MBE Initiative · John B. Holtz</title>
+<meta name="description" content="15 proven MBE practice tips from John B. Holtz — covering session structure, timing, error tracking, and the collaborative philosophy behind raising the California Bar pass rate."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+/* ── PAGE HERO ───────────────────────────────────────────────────────────── */
+.page-hero{
+  background:var(--navy);
+  padding:72px 32px 60px;
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 90% at 80% 20%,rgba(184,144,46,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.page-hero-inner{max-width:1140px;margin:0 auto;position:relative;}
+.breadcrumb{
+  display:flex;align-items:center;gap:10px;
+  font-size:.75rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:32px;
+}
+.breadcrumb a{color:rgba(248,245,239,.4);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--gold-light)}
+.breadcrumb span{color:rgba(248,245,239,.65)}
+.breadcrumb-sep{color:rgba(248,245,239,.25)}
+.hero-kicker{
+  font-size:.72rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-kicker::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
+.page-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:700;line-height:1.15;
+  color:var(--cream);margin-bottom:20px;
+}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.hero-lead{
+  font-size:1rem;line-height:1.8;
+  color:rgba(248,245,239,.65);
+  max-width:600px;margin-bottom:36px;
+}
+.hero-meta{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  padding-top:24px;
+  border-top:1px solid rgba(184,144,46,.2);
+}
+.meta-pill{font-size:.75rem;color:rgba(248,245,239,.5);letter-spacing:.04em;}
+.meta-pill strong{color:rgba(248,245,239,.85);font-weight:500;}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(184,144,46,.35);}
+
+/* ── LAYOUT ─────────────────────────────────────────────────────────────── */
+.content-wrap{
+  max-width:1140px;margin:0 auto;
+  padding:64px 32px 96px;
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:56px;
+  align-items:start;
+}
+
+/* ── TIPS LIST ───────────────────────────────────────────────────────────── */
+.tips-list{
+  display:flex;flex-direction:column;gap:0;
+}
+
+.tip-card{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-top:none;
+  transition:box-shadow .2s;
+  position:relative;
+}
+.tip-card:first-child{
+  border-top:4px solid var(--gold);
+}
+.tip-card:hover{
+  box-shadow:0 4px 24px rgba(15,30,53,.08);
+  z-index:1;
+}
+
+/* accent color cycles */
+.tip-card:nth-child(1)  .tip-num{border-right-color:rgba(184,144,46,.4);}
+.tip-card:nth-child(5)  .tip-num{border-right-color:rgba(184,144,46,.4);}
+.tip-card:nth-child(10) .tip-num{border-right-color:rgba(184,144,46,.4);}
+.tip-card:nth-child(15) .tip-num{background:var(--gold);border-right-color:var(--gold);}
+.tip-card:nth-child(15) .tip-num span{color:var(--navy);}
+
+.tip-num{
+  background:var(--navy);
+  border-right:3px solid rgba(184,144,46,.25);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding-top:28px;
+}
+.tip-num span{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:700;
+  color:var(--gold-light);
+  line-height:1;
+}
+
+.tip-body{
+  padding:24px 28px 26px;
+}
+.tip-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--navy);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;
+  flex-wrap:wrap;
+}
+.tip-tag{
+  display:inline-block;
+  padding:2px 8px;
+  font-family:'DM Sans',sans-serif;
+  font-size:.62rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  background:var(--navy);color:var(--gold);
+  border-left:2px solid var(--gold);
+  vertical-align:middle;
+}
+.tip-tag.structure{background:rgba(15,30,53,.9);color:#7eb8f7;border-color:#7eb8f7;}
+.tip-tag.materials{background:rgba(15,30,53,.9);color:#7dd9b0;border-color:#7dd9b0;}
+.tip-tag.tracking{background:rgba(15,30,53,.9);color:#d4a84b;border-color:#d4a84b;}
+.tip-tag.timing{background:rgba(15,30,53,.9);color:#e89d78;border-color:#e89d78;}
+.tip-tag.strategy{background:rgba(15,30,53,.9);color:#b87eb8;border-color:#b87eb8;}
+.tip-tag.mindset{background:rgba(15,30,53,.9);color:#78c8c8;border-color:#78c8c8;}
+
+.tip-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:.9rem;line-height:1.9;
+  color:#3a3a4a;
+}
+.tip-text p{margin-bottom:.9em;}
+.tip-text p:last-child{margin-bottom:0;}
+.tip-text strong{color:var(--navy);}
+.tip-text em{color:var(--gold);font-style:normal;font-weight:500;}
+
+/* pull-out highlight box inside a tip */
+.tip-highlight{
+  margin:14px 0 4px;
+  padding:14px 18px;
+  background:var(--cream);
+  border-left:3px solid var(--gold);
+  font-size:.85rem;line-height:1.7;
+  color:var(--text-muted);
+}
+.tip-highlight strong{color:var(--navy);}
+
+/* inline sub-list */
+.tip-sublist{
+  list-style:none;
+  display:flex;flex-direction:column;
+  gap:6px;
+  margin:10px 0 4px;
+}
+.tip-sublist li{
+  font-size:.85rem;line-height:1.6;
+  color:var(--text-muted);
+  padding-left:18px;
+  position:relative;
+}
+.tip-sublist li::before{
+  content:'';
+  position:absolute;left:0;top:9px;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);
+}
+
+/* final tip — share */
+.tip-card.tip-final{
+  border-top:none;
+  background:var(--navy);
+}
+.tip-card.tip-final .tip-body{}
+.tip-card.tip-final .tip-title{color:var(--cream);}
+.tip-card.tip-final .tip-text{color:rgba(248,245,239,.7);}
+.tip-card.tip-final .tip-text strong{color:var(--gold-light);}
+
+/* attribution strip */
+.attrib-strip{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:8px;
+  margin-top:0;
+  padding:14px 20px;
+  border:1px solid var(--card-border);
+  border-top:none;
+  background:var(--cream);
+}
+.attrib-strip span{font-size:.75rem;color:var(--text-muted);}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────────────────── */
+.sidebar{}
+
+/* sticky TOC */
+.toc-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-top:3px solid var(--navy);
+  padding:0;
+  margin-bottom:20px;
+  position:sticky;
+  top:84px;
+  max-height:calc(100vh - 120px);
+  overflow-y:auto;
+}
+.toc-card-header{
+  background:var(--navy);
+  padding:14px 20px;
+}
+.toc-card-title{
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+}
+.toc-list{list-style:none;padding:12px 0;}
+.toc-list li a{
+  display:flex;align-items:center;gap:10px;
+  padding:7px 20px;
+  font-size:.78rem;color:var(--text-muted);
+  text-decoration:none;
+  transition:all .15s;
+  border-left:2px solid transparent;
+  line-height:1.35;
+}
+.toc-list li a:hover{
+  color:var(--navy);
+  border-left-color:var(--gold);
+  background:rgba(184,144,46,.04);
+}
+.toc-list li a .toc-n{
+  font-family:'Playfair Display',serif;
+  font-size:.78rem;font-weight:700;
+  color:var(--gold);
+  flex-shrink:0;width:18px;
+}
+.toc-divider{height:1px;background:var(--card-border);margin:4px 0;}
+
+.info-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-left:3px solid var(--navy);
+  padding:20px;
+  margin-bottom:16px;
+}
+.info-card.gold-accent{border-left-color:var(--gold);}
+.info-card-label{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;display:block;
+}
+.info-card-body{
+  font-family:'Libre Baskerville',serif;
+  font-size:.82rem;line-height:1.75;
+  color:var(--text-muted);
+}
+.info-card-body strong{color:var(--navy);}
+
+.contact-mini{
+  background:var(--cream);
+  border:1px solid var(--card-border);
+  padding:20px;
+}
+.contact-mini-label{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:14px;display:block;
+}
+.contact-mini a{
+  display:block;font-size:.8rem;color:var(--gold);
+  text-decoration:none;margin-bottom:6px;transition:color .2s;
+}
+.contact-mini a:hover{color:var(--navy)}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media(max-width:920px){
+  .content-wrap{grid-template-columns:1fr;gap:32px;padding:40px 20px 64px;}
+  .page-hero{padding:48px 20px 40px;}
+  .toc-card{position:static;max-height:none;overflow:auto;}
+}
+@media(max-width:560px){
+  .tip-card{grid-template-columns:52px 1fr;}
+  .tip-num{padding-top:22px;}
+  .tip-num span{font-size:1.05rem;}
+  .tip-body{padding:18px 18px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">MBE <span>Initiative</span></a>
+    <div class="nav-links">
+      <a href="../index.html#mbe">MBE Strategy</a>
+      <a href="../mbe-regimen-sequence/">MBE Regimen</a>
+      <a href="../daily-study-planner/">Daily Planner</a>
+      <a href="." style="color:var(--gold-light);">15 Tips</a>
+      <a href="../index.html#performance-test">Performance Test</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">MBE Initiative</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>15 MBE Practice Tips</span>
+    </div>
+    <div class="hero-kicker">MBE Tipsheet</div>
+    <h1>15 MBE <em>Practice Tips</em></h1>
+    <p class="hero-lead">Proven guidance on session structure, error tracking, timing, materials, and the collaborative philosophy that raises the California Bar pass rate — from John B. Holtz, Esq.</p>
+    <div class="hero-meta">
+      <div class="meta-pill"><strong>Author:</strong> John B. Holtz, Esq.</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Topics:</strong> Structure · Tracking · Timing · Strategy</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Applies to:</strong> All MBE Jurisdictions</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Cost:</strong> Free</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="content-wrap">
+<div><!-- left column -->
+
+<div class="tips-list">
+
+  <!-- TIP 1 -->
+  <div class="tip-card" id="tip-1">
+    <div class="tip-num"><span>1</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Practice in Three Daily Sessions <span class="tip-tag structure">Structure</span></div>
+      <div class="tip-text">
+        <p>Break up your daily MBE practice into three sessions. This regimen will better allow you to readily work your MBE exercise into your day-to-day bar prep routine. And it will make your practice more productive — you'll spend less time rereading stale fact patterns and you'll be able to maintain focus for the full duration of the training session.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 2 -->
+  <div class="tip-card" id="tip-2">
+    <div class="tip-num"><span>2</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Do 10–15–20 Questions Per Session <span class="tip-tag structure">Structure</span></div>
+      <div class="tip-text">
+        <p>The number of questions per session depends on how comfortable you feel on the MBE. Your LSAT score is a predictor for MBE aptitude — use it as guidance:</p>
+        <div class="tip-highlight">
+          <strong>First-time takers by LSAT:</strong><br>
+          Low LSAT → 20 questions per session &nbsp;·&nbsp; Average LSAT → 15 per session &nbsp;·&nbsp; High LSAT → 10 per session (still 30 a day)
+        </div>
+        <div class="tip-highlight">
+          <strong>Repeaters by last scaled MBE score:</strong><br>
+          Below 1350 → 20 per session &nbsp;·&nbsp; 1350–1500 → 15 per session &nbsp;·&nbsp; Above 1500 → 10 per session
+        </div>
+        <p>Don't do more than <strong>25 questions per session</strong> — you become inefficient and less able to handle your mistakes. If work or other commitments are an issue, do at least 10-item sessions and equalize with larger workouts later (but still no more than 25 at a time).</p>
+        <p>If starting early, ramp up gradually: <em>10 items per session</em> at three months out; <em>15 per session</em> at two months out; <em>20 per session for all 3 daily sessions</em> during the month of the exam.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 3 -->
+  <div class="tip-card" id="tip-3">
+    <div class="tip-num"><span>3</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Focus on a Different Subject Each Session <span class="tip-tag strategy">Strategy</span></div>
+      <div class="tip-text">
+        <p>For the first two weeks of substantive review, you'll necessarily be ready for only 2 or 3 subjects. As you cover new material, incorporate each new subject into a rotation — <strong>heavy on the latest subject</strong> to get it up to speed, while revisiting earlier subjects every third day.</p>
+        <p>This will eventually allow you to rotate through <em>all seven subjects three times every week</em>. This rotational pattern keeps the law fresh as you turn your focus forward to new subjects.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 4 -->
+  <div class="tip-card" id="tip-4">
+    <div class="tip-num"><span>4</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Alternate Between Two Sets of Materials <span class="tip-tag materials">Materials</span></div>
+      <div class="tip-text">
+        <p>Every set of materials has an "editorial style" that you will subconsciously tune into for answer cues — giving you a false sense of security. Don't practice just one set at a time. <strong>Shift between two sets</strong> to break the spell.</p>
+        <div class="tip-highlight">
+          <strong>Example rotation:</strong> Mon–Tue, use your primary set (e.g., Barpassers, Rigos, or Kaplan). Wed–Thu, use your secondary set (e.g., BarBri, Emanuel's Strategies &amp; Tactics, Adaptibar, Reed, etc.). Keep shifting. Two sets at a time. <em>Guaranteed to keep you guessing.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 5 -->
+  <div class="tip-card" id="tip-5">
+    <div class="tip-num"><span>5</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Keep Your Materials Clean <span class="tip-tag materials">Materials</span></div>
+      <div class="tip-text">
+        <p>Don't identify the correct pick in your printed materials. <strong>Mark your correct choice off-book.</strong> Ditto your rejected picks. Keep your materials clean and usable for a second pass of just your mistakes.</p>
+        <p>Work up the fact pattern as you've been taught, cross off the picks you reject — but record your answer on a separate answer sheet and also mark your pick in the book. The point is to ensure that the picks remain <em>re-pickable for another day</em>. And don't circle the trigger fact or logic tumbler you missed — keep the fact pattern reusable as well.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 6 -->
+  <div class="tip-card" id="tip-6">
+    <div class="tip-num"><span>6</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Track Every Question You Get Wrong <span class="tip-tag tracking">Tracking</span></div>
+      <div class="tip-text">
+        <p>Look up the answers and make flashcards, recordings, or a missed-rule journal for the missed law. But beyond the band-aids, <strong>you need to confirm mastery of each item.</strong></p>
+        <p>Tag the items to be revisited. Mark off those item numbers on a separate <em>"Re-Do Sheet"</em> — one sheet per MBE subject. When a sheet is filled with your choice of 10–15–20 items, start the next.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 7 -->
+  <div class="tip-card" id="tip-7">
+    <div class="tip-num"><span>7</span></div>
+    <div class="tip-body">
+      <div class="tip-title">A Near-Miss Is As Good As a Miss <span class="tip-tag tracking">Tracking</span></div>
+      <div class="tip-text">
+        <p>If, in review, you realize you got the correct pick <strong>for the wrong reason</strong>, mark it down as a miss and include it with the other misses for follow-up re-testing. Some online or computer programs allow for this — use that feature.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 8 -->
+  <div class="tip-card" id="tip-8">
+    <div class="tip-num"><span>8</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Wait Two Weeks to Revisit Your Misses <span class="tip-tag tracking">Tracking</span></div>
+      <div class="tip-text">
+        <p>Give your short-term memory time to clear these fact and option patterns. <strong>Mark a future date and session</strong> — your most alert time of day is recommended — in your day planner, wall chart, or tablet.</p>
+        <p>Come two weeks, let's see if your MBE rehab program is working. For early July or February practice, <em>cut the waiting period to one week.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 9 -->
+  <div class="tip-card" id="tip-9">
+    <div class="tip-num"><span>9</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Track All Misses During Re-Testing <span class="tip-tag tracking">Tracking</span></div>
+      <div class="tip-text">
+        <p>Same process during re-testing: collect misses on a new sheet and leave the fact patterns, calls, and picks clean for another round. You'll probably collect <strong>30–50 double-misses in each subject.</strong></p>
+        <p>This is your <em>"Hit List"</em> — these are the tricksters that are the bane of your MBE existence. At least now you know exactly where you're weak. Software can often be set to do this tracking for you automatically.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 10 -->
+  <div class="tip-card" id="tip-10">
+    <div class="tip-num"><span>10</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Tackle Your Hit List <span class="tip-tag strategy">Strategy</span></div>
+      <div class="tip-text">
+        <p>The week to ten days before the bar, <strong>hunker down with your problem questions</strong> and finally master your problem areas in law, reading comprehension, and logic interplay — before they show up on the actual exam.</p>
+        <p>This is where the disciplined tracking from Tips 6–9 pays off. You won't be guessing at your weak spots — you'll know exactly which questions to drill.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 11 -->
+  <div class="tip-card" id="tip-11">
+    <div class="tip-num"><span>11</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Time Every Session <span class="tip-tag timing">Timing</span></div>
+      <div class="tip-text">
+        <p>Use a simple timer to keep yourself honest — pocket-size digitals with count-up and countdown timing cost $10–20 at any pharmacy or home goods store. <strong>Reduce your target time each week.</strong></p>
+        <div class="tip-highlight">
+          <strong>Timing ramp-down:</strong> The MBE allots 36 minutes for 20 questions. Start there in Week 1, then drop by one minute per week — 35 min. in Week 2, 34 in Week 3, down to <em>30 minutes per session</em> by the final weeks. You'll have time to spare on exam day.
+        </div>
+        <p>Some computer programs allow you to set average time per item — adjust accordingly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 12 -->
+  <div class="tip-card" id="tip-12">
+    <div class="tip-num"><span>12</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Take Scheduled Time Off <span class="tip-tag strategy">Strategy</span></div>
+      <div class="tip-text">
+        <p>Take off 1–2–3 sessions — one full day or some night/morning combination — each week. You need only <strong>18 sessions per week</strong>, not 21. Two simulated exams during your prep will more than make up for any down time.</p>
+        <p>Rest is not a reward. It is a component of the regimen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 13 -->
+  <div class="tip-card" id="tip-13">
+    <div class="tip-num"><span>13</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Record Your Missed Rules for Audio Review <span class="tip-tag materials">Materials</span></div>
+      <div class="tip-text">
+        <p>Record missed law for playback during your daily commute to bar class or your study site, or for double duty while exercising. Even a <strong>30-minute daily fartlek</strong> (look it up) paired with audio rule review is a powerful combination.</p>
+        <p>This turns otherwise idle time into productive review — without adding hours to your day.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 14 -->
+  <div class="tip-card" id="tip-14">
+    <div class="tip-num"><span>14</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Get a Neutral Second Opinion <span class="tip-tag strategy">Strategy</span></div>
+      <div class="tip-text">
+        <p>Use the <strong>NCBE's MBE-AP</strong> as a neutral diagnostic exam midway through your studies. There are four available tests — consider doing one each Saturday morning, on the two or three Saturdays following your course's simulated MBE (or in place of one if you're a DIY repeater).</p>
+        <p><em>Always revisit your misses</em> from these diagnostic exams — they are neutral, NCBE-sourced, and the closest proxy to actual exam conditions available to you.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIP 15 -->
+  <div class="tip-card tip-final" id="tip-15">
+    <div class="tip-num" style="background:var(--gold);border-right-color:rgba(15,30,53,.3);"><span style="color:var(--navy);">15</span></div>
+    <div class="tip-body">
+      <div class="tip-title">Share This Page <span class="tip-tag mindset">Mindset</span></div>
+      <div class="tip-text">
+        <p>Like <em>The Hunger Games</em>, where you need someone to be your ally before you try to ultimately outlast each other — during the bar exam, on the MBE, <strong>you need everyone to do as well as possible.</strong> The applicant pool's collective performance sets the bar pass rate. It's the written section where you compete against each other.</p>
+        <p>So tell your friends — and even your frenemies — about these tips, because the better everyone does on the MBE, the more people pass. And that "more people" includes <strong>you.</strong></p>
+        <p>It's really that simple. And what — no one told you that? Well, now go tell someone else… and so on.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.tips-list -->
+
+<div class="attrib-strip">
+  <span>© John B. Holtz, Esq. &nbsp;·&nbsp; Free to all bartakers and their academic supporters &nbsp;·&nbsp; MBEInitiative.com</span>
+</div>
+
+</div><!-- /left column -->
+
+<!-- ── SIDEBAR ─────────────────────────────────────────────────────────────── -->
+<div class="sidebar">
+
+  <!-- TOC -->
+  <div class="toc-card">
+    <div class="toc-card-header">
+      <div class="toc-card-title">Jump to Tip</div>
+    </div>
+    <ul class="toc-list">
+      <li><a href="#tip-1"><span class="toc-n">1</span>Three Daily Sessions</a></li>
+      <li><a href="#tip-2"><span class="toc-n">2</span>10–15–20 Questions</a></li>
+      <li><a href="#tip-3"><span class="toc-n">3</span>Rotate by Subject</a></li>
+      <div class="toc-divider"></div>
+      <li><a href="#tip-4"><span class="toc-n">4</span>Two Sets of Materials</a></li>
+      <li><a href="#tip-5"><span class="toc-n">5</span>Keep Materials Clean</a></li>
+      <div class="toc-divider"></div>
+      <li><a href="#tip-6"><span class="toc-n">6</span>Track Every Miss</a></li>
+      <li><a href="#tip-7"><span class="toc-n">7</span>Near-Miss = Miss</a></li>
+      <li><a href="#tip-8"><span class="toc-n">8</span>Wait Two Weeks</a></li>
+      <li><a href="#tip-9"><span class="toc-n">9</span>Track Re-Test Misses</a></li>
+      <li><a href="#tip-10"><span class="toc-n">10</span>Tackle the Hit List</a></li>
+      <div class="toc-divider"></div>
+      <li><a href="#tip-11"><span class="toc-n">11</span>Time Every Session</a></li>
+      <li><a href="#tip-12"><span class="toc-n">12</span>Scheduled Time Off</a></li>
+      <li><a href="#tip-13"><span class="toc-n">13</span>Audio Rule Review</a></li>
+      <li><a href="#tip-14"><span class="toc-n">14</span>NCBE Diagnostic</a></li>
+      <div class="toc-divider"></div>
+      <li><a href="#tip-15"><span class="toc-n">15</span>Share This Page</a></li>
+    </ul>
+  </div>
+
+  <!-- CATEGORY KEY -->
+  <div class="info-card" style="margin-bottom:16px;">
+    <span class="info-card-label">Category Key</span>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="tip-tag structure" style="margin:0;">Structure</span>
+        <span style="font-size:.75rem;color:var(--text-muted);">Session &amp; daily routine</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="tip-tag materials" style="margin:0;">Materials</span>
+        <span style="font-size:.75rem;color:var(--text-muted);">What &amp; how you study from</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="tip-tag tracking" style="margin:0;">Tracking</span>
+        <span style="font-size:.75rem;color:var(--text-muted);">Mistakes &amp; progress logs</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="tip-tag timing" style="margin:0;">Timing</span>
+        <span style="font-size:.75rem;color:var(--text-muted);">Speed &amp; pacing practice</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="tip-tag strategy" style="margin:0;">Strategy</span>
+        <span style="font-size:.75rem;color:var(--text-muted);">High-level exam approach</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="tip-tag mindset" style="margin:0;">Mindset</span>
+        <span style="font-size:.75rem;color:var(--text-muted);">Collaboration &amp; outlook</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <div class="info-card gold-accent" style="margin-bottom:16px;">
+    <span class="info-card-label">The Core Insight</span>
+    <p class="info-card-body">California scales its written section scores to the MBE performance of the entire applicant pool. <strong>Everyone doing better on the MBE raises the pass rate for all.</strong> These tips are built on that principle.</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-mini">
+    <span class="contact-mini-label">Questions or Guidance</span>
+    <a href="tel:3103389582">📞 310-338-9582</a>
+    <a href="mailto:performancetestworkshop@gmail.com">✉ performancetestworkshop@gmail.com</a>
+    <a href="../mbe-regimen-sequence/">MBE Regimen Sequence →</a>
+    <a href="../daily-study-planner/">Daily Study Planner →</a>
+    <a href="../mbe-memo.html">Read the Open Letter →</a>
+  </div>
+
+</div><!-- /sidebar -->
+</div><!-- /.content-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">MBE <span>Initiative</span></div>
+    <div class="footer-links">
+      <a href="../index.html#mbe">MBE</a>
+      <a href="../mbe-regimen-sequence/">Regimen</a>
+      <a href="../daily-study-planner/">Planner</a>
+      <a href=".">15 Tips</a>
+      <a href="../index.html#performance-test">PT Workshop</a>
+    </div>
+    <div class="footer-copy">&copy; John B. Holtz, Esq. &middot; MBEInitiative.com &middot; California</div>
+  </div>
+</footer>
+
+</body>
+</html>
