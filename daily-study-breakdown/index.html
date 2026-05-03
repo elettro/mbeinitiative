@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Daily Study Planner | MBE Initiative · John B. Holtz</title>
+<meta name="description" content="The Holtz Daily Study Breakdown — a structured hour-by-hour study schedule for California Bar Exam preparation. Full-time and working-candidate versions included. Free download."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+/* ── PAGE HERO ───────────────────────────────────────────────────────────── */
+.page-hero{
+  background:var(--navy);
+  padding:72px 32px 60px;
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 90% at 85% 30%,rgba(184,144,46,.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.page-hero-inner{max-width:1140px;margin:0 auto;position:relative;}
+.breadcrumb{
+  display:flex;align-items:center;gap:10px;
+  font-size:.75rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:32px;
+}
+.breadcrumb a{color:rgba(248,245,239,.4);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--gold-light)}
+.breadcrumb span{color:rgba(248,245,239,.65)}
+.breadcrumb-sep{color:rgba(248,245,239,.25)}
+.hero-kicker{
+  font-size:.72rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-kicker::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
+.page-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:700;line-height:1.15;
+  color:var(--cream);margin-bottom:20px;
+}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.hero-lead{
+  font-size:1rem;line-height:1.8;
+  color:rgba(248,245,239,.65);
+  max-width:580px;margin-bottom:36px;
+}
+.hero-meta{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  padding-top:24px;
+  border-top:1px solid rgba(184,144,46,.2);
+}
+.meta-pill{font-size:.75rem;color:rgba(248,245,239,.5);letter-spacing:.04em;}
+.meta-pill strong{color:rgba(248,245,239,.85);font-weight:500;}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(184,144,46,.35);}
+
+/* ── LAYOUT ─────────────────────────────────────────────────────────────── */
+.content-wrap{
+  max-width:1140px;margin:0 auto;
+  padding:64px 32px 96px;
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:56px;
+  align-items:start;
+}
+
+/* ── SCHEDULE CARD SHARED ────────────────────────────────────────────────── */
+.schedule-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-top:4px solid var(--gold);
+  box-shadow:0 4px 40px rgba(15,30,53,.07);
+  margin-bottom:40px;
+}
+.schedule-card:last-child{margin-bottom:0;}
+.card-header{
+  background:var(--navy);
+  padding:20px 28px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  flex-wrap:wrap;
+}
+.card-header-text{}
+.card-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--cream);
+}
+.card-subtitle{
+  font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold-light);margin-top:3px;
+}
+.card-badge{
+  background:rgba(184,144,46,.18);
+  border:1px solid rgba(184,144,46,.35);
+  padding:5px 12px;
+  font-size:.7rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold-light);
+  white-space:nowrap;
+}
+
+/* ── TABLE CHROME ────────────────────────────────────────────────────────── */
+.tbl-head{
+  display:grid;
+  background:var(--navy-mid);
+  border-bottom:2px solid var(--gold);
+  padding:0;
+}
+.tbl-head-full{
+  grid-template-columns:36px 160px 1fr 90px 90px 90px;
+}
+.tbl-head-work{
+  grid-template-columns:36px 160px 1fr 90px 90px 90px;
+}
+.th{
+  padding:10px 10px;
+  font-size:.65rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);
+}
+.th:first-child{color:rgba(248,245,239,.3);}
+
+/* ── TABLE ROWS ──────────────────────────────────────────────────────────── */
+.tbl-body{}
+.tbl-row{
+  display:grid;
+  border-bottom:1px solid var(--card-border);
+  min-height:44px;
+  transition:background .15s;
+}
+.tbl-row:last-child{border-bottom:none;}
+.tbl-row:hover{background:rgba(184,144,46,.03);}
+.tbl-row-full{
+  grid-template-columns:36px 160px 1fr 90px 90px 90px;
+}
+.tbl-row-work{
+  grid-template-columns:36px 160px 1fr 90px 90px 90px;
+}
+
+/* row types */
+.row-session{}
+.row-break{background:rgba(15,30,53,.03);}
+.row-break:hover{background:rgba(15,30,53,.05);}
+.row-ot{background:rgba(184,144,46,.04);}
+.row-ot:hover{background:rgba(184,144,46,.07);}
+
+.td{
+  padding:10px 10px;
+  font-size:.82rem;
+  color:var(--text-muted);
+  display:flex;align-items:center;
+  line-height:1.4;
+  border-right:1px solid var(--card-border);
+}
+.td:last-child{border-right:none;}
+
+/* period number */
+.td-num{
+  justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:.78rem;font-weight:700;
+  color:var(--gold);
+  background:var(--navy);
+  border-right:1px solid rgba(184,144,46,.25) !important;
+}
+.td-num.break-num{
+  color:rgba(248,245,239,.35);
+  background:var(--navy-mid);
+  font-family:'DM Sans',sans-serif;
+  font-size:.6rem;font-weight:400;
+  letter-spacing:.06em;
+}
+.td-num.ot-num{
+  color:var(--gold-light);
+  background:rgba(15,30,53,.85);
+  font-family:'DM Sans',sans-serif;
+  font-size:.62rem;font-weight:500;
+  letter-spacing:.04em;
+}
+
+/* focus label */
+.td-focus{
+  font-weight:500;
+  color:var(--navy);
+  font-size:.83rem;
+}
+.td-focus.break-focus{
+  color:var(--text-muted);font-style:italic;font-weight:400;
+}
+.td-focus.ot-focus{
+  color:var(--text-muted);font-style:italic;font-weight:400;
+}
+/* focus tag */
+.focus-tag{
+  display:inline-block;
+  padding:2px 7px;margin-left:8px;
+  font-size:.62rem;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;
+  background:var(--navy);color:var(--gold);
+  border-left:2px solid var(--gold);
+  vertical-align:middle;
+}
+.focus-tag.mbe{background:rgba(15,30,53,.9);color:#7eb8f7;}
+.focus-tag.sub{background:rgba(15,30,53,.9);color:#7dd9b0;}
+.focus-tag.mem{background:rgba(15,30,53,.9);color:#d4a84b;}
+.focus-tag.essay{background:rgba(15,30,53,.9);color:#e89d78;}
+.focus-tag.break{background:rgba(15,30,53,.7);color:rgba(248,245,239,.4);border-color:rgba(248,245,239,.2);}
+
+/* accomplish */
+.td-accomplish{font-size:.78rem;color:var(--text-muted);}
+
+/* time cells */
+.td-time,.td-commence,.td-personalize{
+  font-size:.78rem;
+  color:var(--text-light);
+  font-family:'DM Sans',sans-serif;
+}
+.td-commence{font-weight:500;color:var(--text-muted);}
+.td-personalize{color:rgba(184,144,46,.7);font-style:italic;}
+
+/* ── NOTES SECTION ──────────────────────────────────────────────────────── */
+.notes-section{
+  padding:24px 28px;
+  background:var(--cream);
+  border-top:1px solid var(--card-border);
+}
+.notes-label{
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:14px;display:block;
+}
+.notes-body{
+  font-family:'Libre Baskerville',serif;
+  font-size:.85rem;line-height:1.85;
+  color:var(--text-muted);
+}
+.notes-body p{margin-bottom:.9em;}
+.notes-body p:last-child{margin-bottom:0;}
+.notes-body strong{color:var(--navy);font-style:normal;}
+
+/* ── DIVIDER BETWEEN CARDS ───────────────────────────────────────────────── */
+.section-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:0 0 40px;
+}
+.section-divider::before,.section-divider::after{
+  content:'';flex:1;height:1px;background:var(--card-border);
+}
+.section-divider span{
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-light);white-space:nowrap;
+  padding:0 4px;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────────────────── */
+.sidebar{}
+.download-box{
+  background:var(--navy);
+  border-top:3px solid var(--gold);
+  padding:32px 28px;
+  margin-bottom:24px;
+}
+.dl-icon{
+  width:48px;height:48px;
+  background:rgba(184,144,46,.15);
+  border:1px solid rgba(184,144,46,.3);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.dl-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5;}
+.dl-label{
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;display:block;
+}
+.dl-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:700;
+  color:var(--cream);margin-bottom:8px;
+}
+.dl-desc{
+  font-size:.82rem;line-height:1.65;
+  color:rgba(248,245,239,.6);
+  margin-bottom:24px;
+}
+.btn-download{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:14px 20px;
+  background:var(--gold);color:var(--navy);
+  font-size:.82rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.btn-download:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-download svg{width:15px;height:15px;stroke:var(--navy);fill:none;stroke-width:2;}
+.dl-note{
+  margin-top:12px;
+  font-size:.72rem;color:rgba(248,245,239,.35);
+  text-align:center;letter-spacing:.02em;
+}
+
+.info-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-left:3px solid var(--navy);
+  padding:20px 20px;
+  margin-bottom:16px;
+}
+.info-card.gold-accent{border-left-color:var(--gold);}
+.info-card-label{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;display:block;
+}
+.info-card-body{
+  font-family:'Libre Baskerville',serif;
+  font-size:.82rem;line-height:1.75;
+  color:var(--text-muted);
+}
+.info-card-body strong{color:var(--navy);}
+.info-card-body em{color:var(--gold);}
+
+.key-rule{
+  display:flex;gap:12px;align-items:flex-start;
+  margin-bottom:10px;
+}
+.key-rule:last-child{margin-bottom:0}
+.kr-num{
+  width:22px;height:22px;flex-shrink:0;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:700;
+  color:var(--gold);margin-top:1px;
+}
+.kr-text{
+  font-size:.8rem;line-height:1.6;
+  color:var(--text-muted);
+  font-family:'Libre Baskerville',serif;
+}
+.kr-text strong{color:var(--navy);}
+
+.contact-mini{
+  background:var(--cream);
+  border:1px solid var(--card-border);
+  padding:20px;margin-top:16px;
+}
+.contact-mini-label{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:14px;display:block;
+}
+.contact-mini a{
+  display:block;font-size:.8rem;color:var(--gold);
+  text-decoration:none;margin-bottom:6px;transition:color .2s;
+}
+.contact-mini a:hover{color:var(--navy)}
+
+/* copyright strip */
+.attrib-strip{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:8px;
+  margin-top:16px;
+  padding:14px 20px;
+  border:1px solid var(--card-border);
+  background:var(--cream);
+}
+.attrib-strip span{font-size:.75rem;color:var(--text-muted);}
+.attrib-strip a{
+  font-size:.75rem;color:var(--gold);
+  text-decoration:none;font-weight:500;
+  letter-spacing:.04em;text-transform:uppercase;
+}
+.attrib-strip a:hover{color:var(--navy)}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media(max-width:980px){
+  .content-wrap{grid-template-columns:1fr;gap:32px;padding:40px 20px 64px;}
+  .page-hero{padding:48px 20px 40px;}
+  .tbl-head-full,.tbl-head-work{grid-template-columns:36px 140px 1fr 80px 80px 80px;}
+  .tbl-row-full,.tbl-row-work{grid-template-columns:36px 140px 1fr 80px 80px 80px;}
+}
+@media(max-width:640px){
+  .schedule-card{overflow-x:auto;}
+  .tbl-head-full,.tbl-head-work{
+    grid-template-columns:30px 120px 1fr 70px 70px 0px;
+    min-width:480px;
+  }
+  .tbl-row-full,.tbl-row-work{
+    grid-template-columns:30px 120px 1fr 70px 70px 0px;
+    min-width:480px;
+  }
+  .td-personalize{display:none;}
+  .th:last-child{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">MBE <span>Initiative</span></a>
+    <div class="nav-links">
+      <a href="../index.html#mbe">MBE Strategy</a>
+      <a href="../mbe-regimen-sequence/">MBE Regimen</a>
+      <a href="../index.html#performance-test">Performance Test</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">MBE Initiative</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Daily Study Planner</span>
+    </div>
+    <div class="hero-kicker">Free Resource</div>
+    <h1>Daily Study <em>Breakdown</em></h1>
+    <p class="hero-lead">A structured, hour-by-hour study schedule for bar exam preparation — with separate tracks for full-time candidates and those balancing work. Built on the principle that consistency beats intensity.</p>
+    <div class="hero-meta">
+      <div class="meta-pill"><strong>Author:</strong> John B. Holtz, Esq.</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Sessions:</strong> 8 Study Periods + Breaks</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Tracks:</strong> Full-Time &amp; Working Candidate</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Cost:</strong> Free</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="content-wrap">
+<div><!-- left column -->
+
+  <!-- ── FULL-TIME SCHEDULE ───────────────────────────────────────────────── -->
+  <div class="schedule-card">
+    <div class="card-header">
+      <div class="card-header-text">
+        <div class="card-title">Full-Time Candidate Schedule</div>
+        <div class="card-subtitle">Daily Study Breakdown · per Holtz · MBEInitiative.com</div>
+      </div>
+      <div class="card-badge">8 Study Periods</div>
+    </div>
+
+    <!-- Column Headers -->
+    <div class="tbl-head tbl-head-full">
+      <div class="th">#</div>
+      <div class="th">Focus</div>
+      <div class="th">Accomplish / Amount</div>
+      <div class="th">Duration</div>
+      <div class="th">Commence</div>
+      <div class="th">Personalize</div>
+    </div>
+
+    <div class="tbl-body">
+
+      <!-- Period 1 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">1</div>
+        <div class="td td-focus">MBE <span class="focus-tag mbe">MBE</span></div>
+        <div class="td td-accomplish">10–15 Questions</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">8:30 am</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 2 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">2</div>
+        <div class="td td-focus">Substantive Review <span class="focus-tag sub">Sub</span></div>
+        <div class="td td-accomplish">8–12 pgs. Read &amp; Outline</div>
+        <div class="td td-time">1.5 hrs.</div>
+        <div class="td td-commence">9:30 am</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 3 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">3</div>
+        <div class="td td-focus">Memorize <span class="focus-tag mem">Mem</span></div>
+        <div class="td td-accomplish">12 rule/sets (on avg.)</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">11:00 am</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Break 1 -->
+      <div class="tbl-row tbl-row-full row-break">
+        <div class="td td-num break-num">BRK</div>
+        <div class="td td-focus break-focus">Food &amp; walk outdoors <span class="focus-tag break">Break</span></div>
+        <div class="td td-accomplish" style="font-style:italic;color:var(--text-light);">Especially a 20-min. mile</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">12:00 – 1pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 4 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">4</div>
+        <div class="td td-focus">MBE <span class="focus-tag mbe">MBE</span></div>
+        <div class="td td-accomplish">10–15 Questions</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">1:00 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 5 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">5</div>
+        <div class="td td-focus">Substantive Review <span class="focus-tag sub">Sub</span></div>
+        <div class="td td-accomplish">8–12 pgs. Read &amp; Outline</div>
+        <div class="td td-time">1.5 hrs.</div>
+        <div class="td td-commence">2:00 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 6 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">6</div>
+        <div class="td td-focus">Essay Work <span class="focus-tag essay">Essay</span></div>
+        <div class="td td-accomplish">Write 1 or Outline 2</div>
+        <div class="td td-time">1.5 hrs.</div>
+        <div class="td td-commence">3:30 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Break 2 -->
+      <div class="tbl-row tbl-row-full row-break">
+        <div class="td td-num break-num">BRK</div>
+        <div class="td td-focus break-focus">Food &amp; talk to friends and family <span class="focus-tag break">Break</span></div>
+        <div class="td td-accomplish" style="font-style:italic;color:var(--text-light);">Recharge &amp; reconnect</div>
+        <div class="td td-time">1–1.5 hrs.</div>
+        <div class="td td-commence">5:30 – 7pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 7 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">7</div>
+        <div class="td td-focus">Sub Review <em style="font-size:.72rem;color:var(--text-light);font-style:normal;margin:0 4px;">or</em> Essays <span class="focus-tag sub">Sub</span></div>
+        <div class="td td-accomplish">8–12 pgs. R&amp;O / Outline 2</div>
+        <div class="td td-time">1.5 hrs.</div>
+        <div class="td td-commence">7:00 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- Period 8 -->
+      <div class="tbl-row tbl-row-full row-session">
+        <div class="td td-num">8</div>
+        <div class="td td-focus">MBE <span class="focus-tag mbe">MBE</span></div>
+        <div class="td td-accomplish">10–15 Questions</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">8:30 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <!-- OT -->
+      <div class="tbl-row tbl-row-full row-ot">
+        <div class="td td-num ot-num">OT</div>
+        <div class="td td-focus ot-focus">Comedy &amp; Camaraderie</div>
+        <div class="td td-accomplish" style="font-style:italic;color:var(--text-light);">Sitcom / sit around</div>
+        <div class="td td-time" style="color:var(--text-light);">Till bed</div>
+        <div class="td td-commence" style="color:var(--text-light);">9:30 – 10:30</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+    </div><!-- /tbl-body -->
+
+    <!-- Notes -->
+    <div class="notes-section">
+      <span class="notes-label">Daily Guidance Notes</span>
+      <div class="notes-body">
+        <p>Pencil in a walk <strong>"around the block" every hour</strong> — about 5 minutes — with lots of stretching. Plan on a daily exercise routine in the morning (though midafternoon is optimum) or during one of your breaks.</p>
+        <p>Snack throughout the day to keep your sugar highs and caffeine jags in check so as to maintain your level of concentration. <strong>Taper off caffeine by 4pm</strong> to avoid sleeping issues.</p>
+        <p>Make sure to get the sleep you need, whether it's 7 or 9 hours each night. A fatigued brain erases — or just poorly retains — much of the gains from a study session. And latest studies show that <strong>information you input just before sleep</strong> — even a short nap — is better retained due to the brain re-organization that occurs during shuteye.</p>
+        <p>You will probably miss about <strong>three study periods each week</strong> — morning, afternoon, or night. That's okay, it happens. But don't try to double up the next day; just get back on the routine as soon as possible.</p>
+      </div>
+    </div>
+
+  </div><!-- /.schedule-card -->
+
+  <!-- ── WORKING CANDIDATE ─────────────────────────────────────────────────── -->
+  <div class="section-divider">
+    <span>For the Working Candidate</span>
+  </div>
+
+  <div class="schedule-card">
+    <div class="card-header">
+      <div class="card-header-text">
+        <div class="card-title">Working Candidate Schedule</div>
+        <div class="card-subtitle">Compressed Daily Plan · Weekdays · per Holtz</div>
+      </div>
+      <div class="card-badge">5 Study Periods</div>
+    </div>
+
+    <!-- Column Headers -->
+    <div class="tbl-head tbl-head-work">
+      <div class="th">#</div>
+      <div class="th">Focus</div>
+      <div class="th">Accomplish / Amount</div>
+      <div class="th">Duration</div>
+      <div class="th">Commence</div>
+      <div class="th">Personalize</div>
+    </div>
+
+    <div class="tbl-body">
+
+      <div class="tbl-row tbl-row-work row-session">
+        <div class="td td-num">1</div>
+        <div class="td td-focus">MBE <span class="focus-tag mbe">MBE</span></div>
+        <div class="td td-accomplish">10–15 Questions</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">Before work</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <div class="tbl-row tbl-row-work row-session">
+        <div class="td td-num">2</div>
+        <div class="td td-focus">MBE <span class="focus-tag mbe">MBE</span></div>
+        <div class="td td-accomplish">10–15 Questions</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">At lunch</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <div class="tbl-row tbl-row-work row-session">
+        <div class="td td-num">3</div>
+        <div class="td td-focus">Sub Review / Essays <span class="focus-tag sub">Sub</span></div>
+        <div class="td td-accomplish">8–12 pgs. R&amp;O / Outline 2</div>
+        <div class="td td-time">1.5 hrs.</div>
+        <div class="td td-commence">7:00 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <div class="tbl-row tbl-row-work row-session">
+        <div class="td td-num">4</div>
+        <div class="td td-focus">Memorize <span class="focus-tag mem">Mem</span></div>
+        <div class="td td-accomplish">6 rule/sets (on avg.)</div>
+        <div class="td td-time">0.5 hr.</div>
+        <div class="td td-commence">8:30 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <div class="tbl-row tbl-row-work row-session">
+        <div class="td td-num">5</div>
+        <div class="td td-focus">MBE <span class="focus-tag mbe">MBE</span></div>
+        <div class="td td-accomplish">10–15 Questions</div>
+        <div class="td td-time">1 hr.</div>
+        <div class="td td-commence">9:00 pm</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+      <div class="tbl-row tbl-row-work row-ot">
+        <div class="td td-num ot-num">OT</div>
+        <div class="td td-focus ot-focus">Comedy &amp; Camaraderie</div>
+        <div class="td td-accomplish" style="font-style:italic;color:var(--text-light);">Sitcom / sit around</div>
+        <div class="td td-time" style="color:var(--text-light);">Till bed</div>
+        <div class="td td-commence" style="color:var(--text-light);">10:00 – 10:30</div>
+        <div class="td td-personalize">_____</div>
+      </div>
+
+    </div><!-- /tbl-body -->
+
+    <div class="notes-section">
+      <span class="notes-label">Working Candidate Guidance</span>
+      <div class="notes-body">
+        <p>If you are working full time, <strong>use the full-time schedule above for your open weekends.</strong> For workdays, try squeezing your memorization time into part of your daily commute, and follow this compressed schedule.</p>
+        <p>The key to effective prolonged studying is a <strong>balanced regimen, perseverance with flexibility</strong> — every time you fall off schedule, get back on — and attaining and maintaining a good humor.</p>
+      </div>
+    </div>
+
+  </div><!-- /.schedule-card -->
+
+  <!-- Attribution -->
+  <div class="attrib-strip">
+    <span>© John B. Holtz, Esq. · Free to all individual bartakers and their academic supporters.</span>
+    <a href="daily-study-breakdown.pdf" download>↓ Download PDF</a>
+  </div>
+
+</div><!-- /left column -->
+
+<!-- ── SIDEBAR ─────────────────────────────────────────────────────────────── -->
+<div class="sidebar">
+
+  <!-- DOWNLOAD BOX -->
+  <div class="download-box">
+    <div class="dl-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </div>
+    <span class="dl-label">Free Download</span>
+    <div class="dl-title">Daily Study Breakdown</div>
+    <p class="dl-desc">Print-ready PDF. Both schedules on one sheet — customize the "Personalize" column for your own routine.</p>
+    <a class="btn-download" href="daily-study-breakdown.pdf" download>
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download PDF
+    </a>
+    <div class="dl-note">PDF · Print-ready · Free</div>
+  </div>
+
+  <!-- KEY PRINCIPLES -->
+  <div class="info-card">
+    <span class="info-card-label">Key Principles</span>
+    <div>
+      <div class="key-rule">
+        <div class="kr-num">1</div>
+        <div class="kr-text"><strong>Three MBE sessions per day</strong> — morning, lunch, and evening — even on the busiest days.</div>
+      </div>
+      <div class="key-rule">
+        <div class="kr-num">2</div>
+        <div class="kr-text"><strong>Taper caffeine by 4pm.</strong> Sleep quality directly affects retention.</div>
+      </div>
+      <div class="key-rule">
+        <div class="kr-num">3</div>
+        <div class="kr-text">Walk around the block <strong>every hour.</strong> Five minutes of movement protects concentration.</div>
+      </div>
+      <div class="key-rule">
+        <div class="kr-num">4</div>
+        <div class="kr-text">Miss a period? <strong>Don't double up.</strong> Just return to the routine as soon as possible.</div>
+      </div>
+      <div class="key-rule">
+        <div class="kr-num">5</div>
+        <div class="kr-text"><strong>Review material just before sleep</strong> — even a short nap improves retention through brain reorganization.</div>
+      </div>
+      <div class="key-rule">
+        <div class="kr-num">6</div>
+        <div class="kr-text">Working full-time? <strong>Use the full schedule on weekends</strong> and the compressed track on weekdays.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <div class="info-card gold-accent">
+    <span class="info-card-label">The Core Philosophy</span>
+    <p class="info-card-body">The key to effective prolonged studying is a <strong>balanced regimen, perseverance with flexibility</strong> — every time you fall off schedule, get back on — and attaining and maintaining a good humor.</p>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="info-card">
+    <span class="info-card-label">Session Type Legend</span>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="focus-tag mbe" style="margin:0;">MBE</span>
+        <span style="font-size:.78rem;color:var(--text-muted);">Multistate practice questions</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="focus-tag sub" style="margin:0;">Sub</span>
+        <span style="font-size:.78rem;color:var(--text-muted);">Substantive review &amp; outlining</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="focus-tag mem" style="margin:0;">Mem</span>
+        <span style="font-size:.78rem;color:var(--text-muted);">Rule memorization sets</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="focus-tag essay" style="margin:0;">Essay</span>
+        <span style="font-size:.78rem;color:var(--text-muted);">Essay writing or outlining</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-mini">
+    <span class="contact-mini-label">Questions or Guidance</span>
+    <a href="tel:3103389582">📞 310-338-9582</a>
+    <a href="mailto:performancetestworkshop@gmail.com">✉ performancetestworkshop@gmail.com</a>
+    <a href="../mbe-regimen-sequence/">View MBE Regimen Sequence →</a>
+    <a href="../mbe-memo.html">Read the Open Letter →</a>
+  </div>
+
+</div><!-- /sidebar -->
+</div><!-- /.content-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">MBE <span>Initiative</span></div>
+    <div class="footer-links">
+      <a href="../index.html#mbe">MBE</a>
+      <a href="../mbe-regimen-sequence/">Regimen</a>
+      <a href="../index.html#performance-test">PT Workshop</a>
+    </div>
+    <div class="footer-copy">&copy; John B. Holtz, Esq. &middot; MBEInitiative.com &middot; California</div>
+  </div>
+</footer>
+
+</body>
+</html>
