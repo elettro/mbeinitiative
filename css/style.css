@@ -69,7 +69,7 @@ body{
   text-decoration:none;
 }
 .brand span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;justify-content:flex-end;gap:32px;flex-wrap:nowrap}
+.nav-links{display:flex;align-items:center;justify-content:flex-end;gap:24px;flex-wrap:nowrap;margin-left:40px}
 .nav-links a{
   display:inline-flex;align-items:center;
   font-size:0.82rem;font-weight:500;
