@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MBE Regimen Sequence | MBE Initiative · John B. Holtz</title>
+<meta name="description" content="The MBE Regimen Sequence by John B. Holtz — a thrice-daily, 10-week MBE practice framework for California Bar Exam applicants. Free to download."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* PAGE-SPECIFIC */
+.page-hero{
+  background:var(--navy);
+  padding:72px 32px 60px;
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 90% at 85% 30%, rgba(184,144,46,0.06) 0%, transparent 65%);
+  pointer-events:none;
+}
+.page-hero-inner{max-width:1140px;margin:0 auto;position:relative;}
+.breadcrumb{
+  display:flex;align-items:center;gap:10px;
+  font-size:0.75rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:32px;
+}
+.breadcrumb a{color:rgba(248,245,239,0.4);text-decoration:none;transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--gold-light)}
+.breadcrumb span{color:rgba(248,245,239,0.65)}
+.breadcrumb-sep{color:rgba(248,245,239,0.25)}
+.hero-kicker{
+  font-size:0.72rem;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-kicker::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
+.page-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:700;line-height:1.15;
+  color:var(--cream);margin-bottom:20px;
+}
+.page-hero h1 em{font-style:italic;color:var(--gold-light);}
+.hero-lead{
+  font-size:1rem;line-height:1.8;
+  color:rgba(248,245,239,0.65);
+  max-width:560px;margin-bottom:36px;
+}
+.hero-meta{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  padding-top:24px;
+  border-top:1px solid rgba(184,144,46,0.2);
+}
+.meta-pill{
+  font-size:0.75rem;color:rgba(248,245,239,0.5);
+  letter-spacing:0.04em;
+}
+.meta-pill strong{color:rgba(248,245,239,0.85);font-weight:500;}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(184,144,46,0.35);}
+
+/* MAIN CONTENT AREA */
+.content-wrap{
+  max-width:1140px;margin:0 auto;
+  padding:64px 32px 96px;
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:56px;
+  align-items:start;
+}
+
+/* SCHEDULE TABLE */
+.schedule-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-top:4px solid var(--gold);
+  box-shadow:0 4px 40px rgba(15,30,53,0.07);
+}
+.schedule-card-header{
+  background:var(--navy);
+  padding:20px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.sch-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--cream);
+}
+.sch-subtitle{
+  font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--gold-light);margin-top:3px;
+}
+.day-header-row{
+  display:grid;
+  grid-template-columns:90px repeat(7,1fr);
+  background:var(--navy-mid);
+  border-bottom:2px solid var(--gold);
+}
+.day-header-row div{
+  padding:10px 6px;
+  font-size:0.7rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);text-align:center;
+}
+.day-header-row div:first-child{
+  text-align:left;padding-left:16px;color:rgba(248,245,239,0.4);
+}
+.week-block{border-bottom:1px solid var(--card-border);}
+.week-block:last-child{border-bottom:none;}
+.week-row{
+  display:grid;
+  grid-template-columns:90px repeat(7,1fr);
+  min-height:34px;
+}
+.week-row:nth-child(2){background:rgba(248,245,239,0.4);}
+.week-row:nth-child(3){background:rgba(248,245,239,0.6);}
+.week-label-cell{
+  background:var(--navy);
+  display:flex;align-items:center;
+  padding:0 0 0 16px;
+  font-size:0.68rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold-light);
+  border-right:1px solid rgba(184,144,46,0.3);
+}
+.blank-cell{
+  border-right:1px solid var(--card-border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.7rem;color:var(--text-light);
+  letter-spacing:0.05em;
+  min-height:34px;
+}
+.blank-cell:last-child{border-right:none;}
+.note-cell{
+  grid-column:2/-1;
+  padding:6px 12px;
+  font-size:0.72rem;
+  font-family:'Libre Baskerville',serif;
+  font-style:italic;
+  color:var(--text-muted);
+  line-height:1.5;
+  border-left:2px solid var(--gold);
+  display:flex;align-items:center;
+  background:rgba(184,144,46,0.04);
+}
+/* Week 1 — instructions inline */
+.week1-instructions{
+  background:rgba(15,30,53,0.03);
+  border-bottom:1px solid var(--card-border);
+}
+
+/* Week 10 special */
+.week10-finale{
+  display:grid;
+  grid-template-columns:90px 1fr 1fr 4fr;
+  min-height:100px;
+  border-bottom:none;
+}
+.finale-label{
+  background:var(--navy);
+  display:flex;align-items:center;
+  padding:0 0 0 16px;
+  font-size:0.68rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold-light);
+  border-right:1px solid rgba(184,144,46,0.3);
+}
+.finale-good,.finale-ready{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:12px 8px;
+  text-align:center;
+  border-right:1px solid var(--card-border);
+}
+.finale-word{
+  font-family:'Playfair Display',serif;
+  font-size:0.85rem;font-weight:700;
+  color:var(--navy);line-height:1.3;
+}
+.finale-word em{color:var(--gold);font-style:normal;}
+.finale-note{
+  padding:14px 20px;
+  font-family:'Libre Baskerville',serif;
+  font-size:0.78rem;font-style:italic;
+  color:var(--text-muted);
+  line-height:1.7;
+  display:flex;align-items:center;
+}
+
+/* SIDEBAR */
+.sidebar{}
+.download-box{
+  background:var(--navy);
+  border-top:3px solid var(--gold);
+  padding:32px 28px;
+  margin-bottom:24px;
+}
+.dl-icon{
+  width:48px;height:48px;
+  background:rgba(184,144,46,0.15);
+  border:1px solid rgba(184,144,46,0.3);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.dl-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5;}
+.dl-label{
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;display:block;
+}
+.dl-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;font-weight:700;
+  color:var(--cream);margin-bottom:8px;
+}
+.dl-desc{
+  font-size:0.82rem;line-height:1.65;
+  color:rgba(248,245,239,0.6);
+  margin-bottom:24px;
+}
+.btn-download{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:14px 20px;
+  background:var(--gold);color:var(--navy);
+  font-size:0.82rem;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  text-decoration:none;
+  transition:background 0.2s,transform 0.15s;
+}
+.btn-download:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-download svg{width:15px;height:15px;stroke:var(--navy);fill:none;stroke-width:2;}
+.dl-note{
+  margin-top:12px;
+  font-size:0.72rem;color:rgba(248,245,239,0.35);
+  text-align:center;letter-spacing:0.02em;
+}
+
+/* SIDEBAR INFO CARDS */
+.info-card{
+  background:#fff;
+  border:1px solid var(--card-border);
+  border-left:3px solid var(--navy);
+  padding:20px 20px;
+  margin-bottom:16px;
+}
+.info-card-label{
+  font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;display:block;
+}
+.info-card-body{
+  font-family:'Libre Baskerville',serif;
+  font-size:0.82rem;line-height:1.75;
+  color:var(--text-muted);
+}
+.info-card-body strong{color:var(--navy);}
+
+.key-rule{
+  display:flex;gap:12px;align-items:flex-start;
+  margin-bottom:10px;
+}
+.key-rule:last-child{margin-bottom:0}
+.kr-num{
+  width:22px;height:22px;flex-shrink:0;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.65rem;font-weight:700;
+  color:var(--gold);margin-top:1px;
+}
+.kr-text{
+  font-size:0.8rem;line-height:1.6;
+  color:var(--text-muted);
+  font-family:'Libre Baskerville',serif;
+}
+
+.contact-mini{
+  background:var(--cream);
+  border:1px solid var(--card-border);
+  padding:20px;
+  margin-top:16px;
+}
+.contact-mini-label{
+  font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:14px;display:block;
+}
+.contact-mini a{
+  display:block;font-size:0.8rem;color:var(--gold);
+  text-decoration:none;margin-bottom:6px;
+  transition:color 0.2s;
+}
+.contact-mini a:hover{color:var(--navy)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .content-wrap{grid-template-columns:1fr;gap:32px;}
+  .page-hero{padding:48px 20px 40px;}
+  .content-wrap{padding:40px 20px 64px;}
+  .day-header-row,.week-row{grid-template-columns:72px repeat(7,1fr);}
+  .week-label-cell{font-size:0.6rem;padding-left:8px;}
+  .week10-finale{grid-template-columns:72px 1fr 1fr 3fr;}
+}
+@media(max-width:600px){
+  .day-header-row,.week-row{grid-template-columns:56px repeat(7,1fr);}
+  .blank-cell{font-size:0.58rem;}
+  .note-cell{font-size:0.65rem;}
+  .schedule-card{overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">MBE <span>Initiative</span></a>
+    <div class="nav-links">
+      <a href="index.html#mbe">MBE Strategy</a>
+      <a href="index.html#study-sequence">Study Sequence</a>
+      <a href="index.html#daily-planner">Daily Planner</a>
+      <a href="index.html#performance-test">Performance Test</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">MBE Initiative</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>MBE Regimen Sequence</span>
+    </div>
+    <div class="hero-kicker">Free Resource</div>
+    <h1>MBE <em>Regimen Sequence</em></h1>
+    <p class="hero-lead">A structured 10-week, thrice-daily practice framework for the Multistate Bar Examination — designed to build consistency, sharpen pattern recognition, and raise the collective pass rate.</p>
+    <div class="hero-meta">
+      <div class="meta-pill"><strong>Author:</strong> John B. Holtz, Esq.</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Format:</strong> 10-Week Daily Tracker</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Practice:</strong> 3 × 15 Questions Per Day</div>
+      <div class="meta-dot"></div>
+      <div class="meta-pill"><strong>Cost:</strong> Free</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrap">
+
+  <!-- SCHEDULE TABLE -->
+  <div>
+    <div class="schedule-card">
+
+      <div class="schedule-card-header">
+        <div>
+          <div class="sch-title">MBE Regimen Sequence</div>
+          <div class="sch-subtitle">Thrice-a-Day Practice · per Holtz · MBEInitiative.com</div>
+        </div>
+      </div>
+
+      <!-- Instructions row above the grid -->
+      <div style="padding:14px 20px 12px;background:rgba(15,30,53,0.03);border-bottom:2px solid var(--card-border);">
+        <p style="font-family:'Libre Baskerville',serif;font-size:0.8rem;font-style:italic;color:var(--text-muted);line-height:1.6;margin:0;">
+          <strong style="font-style:normal;color:var(--navy);">How to use:</strong>
+          10–15–20 questions each session; ramp up the number over time.
+          Use alongside suggestions in the MBE Tipsheet.
+          Each cell represents one practice session — log your source, subject, and score.
+        </p>
+      </div>
+
+      <!-- Day headers -->
+      <div class="day-header-row">
+        <div></div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+        <div>Sun</div>
+      </div>
+
+      <!-- WEEK 1 -->
+      <div class="week-block">
+        <div class="week-row">
+          <div class="week-label-cell">Week 1</div>
+          <div class="note-cell">Start after the first subject has been covered in class and in the MBE workshop.</div>
+        </div>
+        <div class="week-row">
+          <div class="week-label-cell"></div>
+          <div class="note-cell">After each new subject, include it in the cycle with a heavier presence in the rotation.</div>
+        </div>
+        <div class="week-row">
+          <div class="week-label-cell"></div>
+          <div class="note-cell">Week 4 onward: 1st session each day should be do-overs of missed Qs from 1–2 weeks earlier.</div>
+        </div>
+      </div>
+
+      <!-- WEEKS 2–9 -->
+      <div class="week-block">
+        <div class="week-row">
+          <div class="week-label-cell">Week 2</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div>
+        </div>
+        <div class="week-row">
+          <div class="week-label-cell"></div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div>
+        </div>
+        <div class="week-row">
+          <div class="week-label-cell"></div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+          <div class="blank-cell">_______</div>
+        </div>
+      </div>
+
+      <!-- Weeks 3–9 identical blank rows -->
+      <script>
+      (function(){
+        const parent = document.querySelector('.schedule-card');
+        const afterW2 = parent.querySelectorAll('.week-block')[1];
+        for(let w=3;w<=9;w++){
+          const block = document.createElement('div');
+          block.className='week-block';
+          let html = '';
+          for(let s=0;s<3;s++){
+            html += `<div class="week-row">
+              <div class="week-label-cell">${s===0?'Week '+w:''}</div>
+              <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+              <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+              <div class="blank-cell">_______</div><div class="blank-cell">_______</div>
+              <div class="blank-cell">_______</div>
+            </div>`;
+          }
+          block.innerHTML = html;
+          afterW2.after(block);
+        }
+      })();
+      </script>
+
+      <!-- WEEK 10 -->
+      <div class="week10-finale">
+        <div class="finale-label">Week 10</div>
+        <div class="finale-good">
+          <div class="finale-word"><em>Good</em><br>Luck<br>Today!</div>
+        </div>
+        <div class="finale-ready">
+          <div class="finale-word">You Are<br><em>Ready</em><br>For This!</div>
+        </div>
+        <div class="finale-note">
+          Once you are caught up with the last subject, cycle through all 7 every 2-plus days.
+          "Missing" days can be made up before or after a planned absence by upping the numbers for a few sessions.
+          Take days off when sitting the NCBEx OPE/Exams or a Simulated MBE.
+          Secondary MBE sources should be used every few days to stay sharp.
+        </div>
+      </div>
+
+    </div><!-- /.schedule-card -->
+
+    <!-- Copyright / attribution -->
+    <div style="margin-top:16px;padding:14px 20px;border:1px solid var(--card-border);background:var(--cream);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+      <span style="font-size:0.75rem;color:var(--text-muted);">© John B. Holtz, Esq. · Free to all individual bartakers and their academic supporters.</span>
+      <a href="MBE-Regimen-Sequence.pdf" download style="font-size:0.75rem;color:var(--gold);text-decoration:none;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;">↓ Download PDF</a>
+    </div>
+
+  </div><!-- /left column -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- DOWNLOAD BOX -->
+    <div class="download-box">
+      <div class="dl-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </div>
+      <span class="dl-label">Free Download</span>
+      <div class="dl-title">MBE Regimen Sequence</div>
+      <p class="dl-desc">Print-ready PDF. Use it as your daily tracker through the 10-week prep cycle — one copy per bar season.</p>
+      <a class="btn-download" href="MBE-Regimen-Sequence.pdf" download>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download PDF
+      </a>
+      <div class="dl-note">PDF · Landscape · Print-ready · Free</div>
+    </div>
+
+    <!-- KEY RULES -->
+    <div class="info-card">
+      <span class="info-card-label">How the Sequence Works</span>
+      <div>
+        <div class="key-rule">
+          <div class="kr-num">1</div>
+          <div class="kr-text">Practice <strong>3 sessions per day</strong> — morning, after lunch, and evening.</div>
+        </div>
+        <div class="key-rule">
+          <div class="kr-num">2</div>
+          <div class="kr-text">Start with <strong>10–15 questions</strong> per session; ramp up to 20 over the weeks.</div>
+        </div>
+        <div class="key-rule">
+          <div class="kr-num">3</div>
+          <div class="kr-text">Add each new subject to your rotation as it is covered in class.</div>
+        </div>
+        <div class="key-rule">
+          <div class="kr-num">4</div>
+          <div class="kr-text">From <strong>Week 4</strong> on: your first daily session is always do-overs of missed questions from 1–2 weeks prior.</div>
+        </div>
+        <div class="key-rule">
+          <div class="kr-num">5</div>
+          <div class="kr-text">Use <strong>secondary MBE sources</strong> every few days to stay sharp and avoid look-alike fatigue.</div>
+        </div>
+        <div class="key-rule">
+          <div class="kr-num">6</div>
+          <div class="kr-text">Missing a day? Make it up before or after by increasing session volume — don't skip it.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY IT MATTERS -->
+    <div class="info-card" style="border-left-color:var(--gold);">
+      <span class="info-card-label">Why This Matters</span>
+      <p class="info-card-body">California scales its written section scores to MBE performance. A stronger collective MBE result means a higher pass rate for <em>everyone</em> — not just you. This sequence is built on that principle.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-mini">
+      <span class="contact-mini-label">Questions or Guidance</span>
+      <a href="tel:3103389582">📞 310-338-9582</a>
+      <a href="mailto:performancetestworkshop@gmail.com">✉ performancetestworkshop@gmail.com</a>
+      <a href="mbe-memo.html">Read the Full Open Letter →</a>
+    </div>
+
+  </div><!-- /sidebar -->
+
+</div><!-- /.content-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">MBE <span>Initiative</span></div>
+    <div class="footer-links">
+      <a href="index.html#mbe">MBE</a>
+      <a href="index.html#study-sequence">Sequence</a>
+      <a href="index.html#daily-planner">Planner</a>
+      <a href="index.html#performance-test">PT Workshop</a>
+    </div>
+    <div class="footer-copy">&copy; John B. Holtz, Esq. &middot; MBEInitiative.com &middot; California</div>
+  </div>
+</footer>
+
+</body>
+</html>
