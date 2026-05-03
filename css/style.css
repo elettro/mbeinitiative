@@ -42,12 +42,15 @@ body{
   text-decoration:none;
 }
 .brand span{color:var(--gold)}
-.nav-links{display:flex;gap:32px}
+.nav-links{display:flex;align-items:center;justify-content:flex-end;gap:32px;flex-wrap:nowrap}
 .nav-links a{
+  display:inline-flex;align-items:center;
   font-size:0.82rem;font-weight:500;
   color:rgba(248,245,239,0.7);
   text-decoration:none;letter-spacing:0.08em;
   text-transform:uppercase;
+  line-height:1;
+  white-space:nowrap;
   transition:color 0.2s;
 }
 .nav-links a:hover{color:var(--gold-light)}
