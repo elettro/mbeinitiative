@@ -17,14 +17,14 @@
 </div>\
 <nav class="nav">\
   <div class="nav-inner">\
-    <a class="brand" href="' + base + '/">MBE <span>Initiative</span></a>\
+    <a class="brand" href="https://mbeinitiative.com/">MBE <span>Initiative</span></a>\
     <div class="nav-links">\
-      <a href="/#mbe">MBE Strategy</a>\
-      <a href="/mbe-regimen-sequence">MBE Regimen Sequence</a>\
-      <a href="/daily-study-breakdown/index.html">Daily Planner</a>\
-      <a href="/15-mbe-practice-tips/index.html">15 MBE Practice Tips</a>\
-      <a href="/#performance-test">Performance Test</a>\
-      <a href="/mbememo">MBE Memo</a>\
+      <a href="https://mbeinitiative.com/#mbe">MBE Strategy</a>\
+      <a href="https://mbeinitiative.com/mbe-regimen-sequence">MBE Regimen Sequence</a>\
+      <a href="https://mbeinitiative.com/daily-study-breakdown/index.html">Daily Planner</a>\
+      <a href="https://mbeinitiative.com/15-mbe-practice-tips/index.html">15 MBE Practice Tips</a>\
+      <a href="https://mbeinitiative.com/#performance-test">Performance Test</a>\
+      <a href="https://mbeinitiative.com/mbememo">MBE Memo</a>\
     </div>\
   </div>\
 </nav>';
