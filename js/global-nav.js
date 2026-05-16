@@ -2,7 +2,7 @@
   var holder = document.querySelector('[data-global-nav]');
   if (!holder) return;
 
-  var base = holder.getAttribute('data-base-path') || '/mbeinitiative';
+  var base = holder.getAttribute('data-base-path') || '';
 
   holder.innerHTML = '\
 <div class="top-strip">\
